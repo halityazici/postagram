@@ -139,10 +139,14 @@ const Preview = () => {
         if (containerRef.current && format) {
             const containerWidth = containerRef.current.clientWidth;
             const containerHeight = containerRef.current.clientHeight;
+
+            // If container hasn't properly rendered its flex dimensions yet, wait
+            if (containerWidth === 0 || containerHeight === 0) return;
+
             const padding = 80;
 
-            const availableWidth = Math.max(containerWidth - padding, 100);
-            const availableHeight = Math.max(containerHeight - padding, 100);
+            const availableWidth = Math.max(containerWidth - padding, 50);
+            const availableHeight = Math.max(containerHeight - padding, 50);
 
             const scaleX = availableWidth / format.width;
             const scaleY = availableHeight / format.height;
@@ -156,10 +160,23 @@ const Preview = () => {
         }
     }, [format]);
 
-    React.useLayoutEffect(() => {
+    React.useEffect(() => {
         fitToScreen();
         window.addEventListener('resize', fitToScreen);
-        return () => window.removeEventListener('resize', fitToScreen);
+
+        // Use ResizeObserver to catch actual layout completion
+        let observer;
+        if (containerRef.current) {
+            observer = new ResizeObserver(() => {
+                fitToScreen();
+            });
+            observer.observe(containerRef.current);
+        }
+
+        return () => {
+            window.removeEventListener('resize', fitToScreen);
+            if (observer) observer.disconnect();
+        };
     }, [fitToScreen]);
 
     // Zoom Controls
