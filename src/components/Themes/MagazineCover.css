@@ -1,0 +1,81 @@
+.theme-magazine-cover {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+.mc-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.mc-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mc-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.mc-layout {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.mc-masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+}
+
+.mc-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.mc-logo {
+    height: 40px;
+    filter: brightness(0) invert(1);
+}
+
+.mc-issue-date {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.mc-main-story {
+    margin-bottom: 20px;
+}
+
+.mc-divider {
+    width: 80px;
+    height: 4px;
+    background: #fff;
+    margin: 20px 0;
+}

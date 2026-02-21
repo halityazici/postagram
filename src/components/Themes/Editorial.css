@@ -1,0 +1,97 @@
+.theme-editorial {
+    width: 100%;
+    height: 100%;
+    background: #f4f1ea;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.ed-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ed-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 12px;
+}
+
+.ed-meta {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 8px;
+}
+
+.ed-logo-img {
+    height: 24px;
+    opacity: 0.8;
+}
+
+.ed-hero {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    /* Take significant space */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ed-image-wrap {
+    width: 100%;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.ed-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: sepia(0.05);
+}
+
+.ed-title-overlay {
+    background: #fff;
+    padding: 20px 20px 20px 0;
+    margin-top: -40px;
+    /* Overlap */
+    margin-left: 20px;
+    position: relative;
+    z-index: 10;
+    max-width: 90%;
+    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.05);
+}
+
+.ed-body-col {
+    padding: 0 20px;
+    position: relative;
+}
+
+.ed-cap-line {
+    width: 40px;
+    height: 1px;
+    background: #000;
+    margin-bottom: 20px;
+}
+
+.ed-drop-cap {
+    float: left;
+    font-size: 4rem;
+    line-height: 0.7;
+    margin-right: 12px;
+    margin-top: 6px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
