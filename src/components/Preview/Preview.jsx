@@ -84,7 +84,7 @@ const Preview = () => {
 
     const capturePageDataUrl = async (node, bgColor) => {
         const options = {
-            cacheBust: true,
+            useCors: true,
             pixelRatio: 2,
             width: format.width,
             height: format.height,
